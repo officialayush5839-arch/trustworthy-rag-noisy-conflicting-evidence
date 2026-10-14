@@ -1,0 +1,60 @@
+{
+  "updated_at": "2026-10-14T21:33:30",
+  "project": "trustworthy-rag-noisy-conflicting-evidence",
+  "phases": [
+    {
+      "id": "phase_0",
+      "title": "Phase 0: Specification and Environment Audit",
+      "status": "COMPLETED",
+      "completed_at": "2026-10-14T21:33:14"
+    },
+    {
+      "id": "phase_1",
+      "title": "Phase 1: Data and Benchmark Preparation",
+      "status": "IN_PROGRESS",
+      "completed_at": null
+    },
+    {
+      "id": "phase_2",
+      "title": "Phase 2: Conventional RAG Baseline",
+      "status": "PENDING",
+      "completed_at": null
+    },
+    {
+      "id": "phase_3",
+      "title": "Phase 3: Controlled Perturbation Suite",
+      "status": "PENDING",
+      "completed_at": null
+    },
+    {
+      "id": "phase_4",
+      "title": "Phase 4: Evidence Analysis and Calibrated Abstention",
+      "status": "PENDING",
+      "completed_at": null
+    },
+    {
+      "id": "phase_5",
+      "title": "Phase 5: Systematic Evaluation and Ablation Matrix",
+      "status": "PENDING",
+      "completed_at": null
+    },
+    {
+      "id": "phase_6",
+      "title": "Phase 6: Error Analysis and Robustness",
+      "status": "PENDING",
+      "completed_at": null
+    },
+    {
+      "id": "phase_7",
+      "title": "Phase 7: Research Reporting and Manuscript Preparation",
+      "status": "PENDING",
+      "completed_at": null
+    },
+    {
+      "id": "phase_8",
+      "title": "Phase 8: Final Validation and Release Packaging",
+      "status": "PENDING",
+      "completed_at": null
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "trustworthy-rag"
+version = "0.1.0"
+description = "Trustworthy Retrieval-Augmented Generation Under Noisy and Conflicting Evidence"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [
+    { name = "Ayush Vishwakarma" }
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "pydantic>=2.7.0",
+    "rank-bm25>=0.2.2",
+    "sentence-transformers>=3.0.0",
+    "transformers>=4.42.0",
+    "torch>=2.1.0",
+    "pyyaml>=6.0.1",
+    "loguru>=0.7.2",
+    "numpy>=1.26.0",
+    "scipy>=1.11.0",
+    "pandas>=2.1.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.2.0",
+    "pytest-cov>=5.0.0",
+    "black>=24.0.0",
+    "ruff>=0.4.0",
+]
+api = [
+    "fastapi>=0.111.0",
+    "uvicorn>=0.30.0",
+    "google-genai>=0.1.0",
+    "openai>=1.30.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_functions = ["test_*"]

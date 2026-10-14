@@ -112,20 +112,24 @@ notes: str
 
 ## 6. Current Project State
 
-- **Current Active Phase:** `Phase 0: Specification and Environment Audit`
+- **Current Active Phase:** `Phase 1: Data and Benchmark Preparation`
 - **Completed Tasks:**
   - Workspace inspection completed (verified clean directory).
   - Seven master specification documents initialized in `project-spec/`.
+  - Phase 0: Scaffolding, `pyproject.toml`, Pydantic v2 schemas (`src/trustworthy_rag/schemas/models.py`), config loader (`src/trustworthy_rag/config.py`), and unit tests (9/9 passed).
+  - TSK-001 and TSK-002 marked DONE.
 - **In-Progress Tasks:**
-  - Establishing project foundation, environment configuration, and task registry.
+  - TSK-003: Benchmark ingestion and document chunking engine.
+  - TSK-004: Freeze and hash auditable benchmark splits.
 - **Blocked Tasks:** None.
 - **Active Technical Configuration:**
-  - Target Python Version: 3.11+
+  - Python Environment: Python 3.14.6 (`C:\Users\ARYAN - AYUSH\AppData\Local\Python\bin\python.exe`)
+  - Target Ports: Backend: 2218 | Frontend: 2217
   - Architecture: Modular Python package (`src/trustworthy_rag`)
   - Testing Framework: `pytest`
 - **Next Recommended Action:**
-  - Complete `phases.md`, `prd.md`, `rules.md`, and `task.md`.
-  - Proceed to Phase 0 environment setup and dependency specification (`pyproject.toml` / `requirements.txt`).
+  - Implement `src/trustworthy_rag/data/ingestion.py` and `src/trustworthy_rag/data/chunker.py`.
+  - Download / curate auditable test subset for RAGTruth / QA benchmark.
 
 ---
 

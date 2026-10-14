@@ -27,7 +27,7 @@ Tasks in this registry represent the atomic operational units of the project. Ev
 
 #### TSK-001: Initialize Python Package Structure and Dependency Manifests
 - **Phase**: Phase 0
-- **Priority**: P0 | **Status**: `TODO`
+- **Priority**: P0 | **Status**: `DONE`
 - **Dependencies**: None
 - **Affected Files**: `pyproject.toml`, `requirements.txt`, `src/trustworthy_rag/__init__.py`, `.gitignore`
 - **Implementation Steps**:
@@ -43,7 +43,7 @@ Tasks in this registry represent the atomic operational units of the project. Ev
 
 #### TSK-002: Implement Core Pydantic Schemas and Configuration Loaders
 - **Phase**: Phase 0
-- **Priority**: P0 | **Status**: `TODO`
+- **Priority**: P0 | **Status**: `DONE`
 - **Dependencies**: TSK-001
 - **Affected Files**: `src/trustworthy_rag/schemas/`, `src/trustworthy_rag/config.py`
 - **Implementation Steps**:

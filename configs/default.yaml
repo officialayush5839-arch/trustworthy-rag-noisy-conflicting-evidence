@@ -1,0 +1,38 @@
+experiment_name: "default_trustworthy_rag"
+dataset_name: "ragtruth"
+split_dir: "data/frozen"
+
+retrieval:
+  sparse_method: "bm25"
+  bm25_k1: 1.5
+  bm25_b: 0.75
+  dense_model_name: "BAAI/bge-small-en-v1.5"
+  top_k: 10
+  rrf_k: 60
+
+generator:
+  backend: "local"
+  model_identifier: "meta-llama/Llama-3.1-8B-Instruct"
+  temperature: 0.0
+  max_tokens: 512
+
+policy:
+  tau_ans_rel: 0.65
+  tau_cov_min: 0.60
+  tau_clar_min: 0.40
+  tau_con_max: 0.70
+  tau_cit_min: 0.70
+
+perturbation:
+  condition: "clean"
+  severity: 0.0
+  random_seed: 42
+
+random_seeds:
+  - 42
+  - 137
+  - 2024
+  - 7
+  - 99
+
+output_dir: "experiments/runs"

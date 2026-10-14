@@ -1,0 +1,10 @@
+﻿{
+    "status":  "INITIALIZED",
+    "repo_url":  "unknown",
+    "initialized_at":  "2026-10-14T21:29:23",
+    "project_name":  "Trustworthy Retrieval-Augmented Generation Under Noisy and Conflicting Evidence",
+    "ports":  {
+                  "frontend":  2217,
+                  "backend":  2218
+              }
+}
