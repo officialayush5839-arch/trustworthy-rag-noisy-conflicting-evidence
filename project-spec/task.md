@@ -179,7 +179,7 @@ Tasks in this registry represent the atomic operational units of the project. Ev
 
 #### TSK-010: Implement Distractor Passage Injection Operator
 - **Phase**: Phase 3
-- **Priority**: P0 | **Status**: `TODO`
+- **Priority**: P0 | **Status**: `DONE`
 - **Dependencies**: TSK-007
 - **Affected Files**: `src/trustworthy_rag/stress/distractor.py`
 - **Implementation Steps**:
@@ -194,7 +194,7 @@ Tasks in this registry represent the atomic operational units of the project. Ev
 
 #### TSK-011: Implement Key Passage Deletion Operator
 - **Phase**: Phase 3
-- **Priority**: P0 | **Status**: `TODO`
+- **Priority**: P0 | **Status**: `DONE`
 - **Dependencies**: TSK-007
 - **Affected Files**: `src/trustworthy_rag/stress/passage_removal.py`
 - **Implementation Steps**:
@@ -209,7 +209,7 @@ Tasks in this registry represent the atomic operational units of the project. Ev
 
 #### TSK-012: Implement Near-Duplicate Passage Injection Operator
 - **Phase**: Phase 3
-- **Priority**: P0 | **Status**: `TODO`
+- **Priority**: P0 | **Status**: `DONE`
 - **Dependencies**: TSK-007
 - **Affected Files**: `src/trustworthy_rag/stress/near_duplicate.py`
 - **Implementation Steps**:
@@ -224,7 +224,7 @@ Tasks in this registry represent the atomic operational units of the project. Ev
 
 #### TSK-013: Implement Explicit Contradiction Injection Operator
 - **Phase**: Phase 3
-- **Priority**: P0 | **Status**: `TODO`
+- **Priority**: P0 | **Status**: `DONE`
 - **Dependencies**: TSK-007
 - **Affected Files**: `src/trustworthy_rag/stress/contradiction_injection.py`
 - **Implementation Steps**:

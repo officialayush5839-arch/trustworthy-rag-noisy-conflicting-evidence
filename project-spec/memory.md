@@ -112,19 +112,20 @@ notes: str
 
 ## 6. Current Project State
 
-- **Current Active Phase:** `Phase 3: Controlled Perturbation Suite`
+- **Current Active Phase:** `Phase 4: Evidence Analysis and Calibrated Abstention`
 - **Completed Tasks:**
   - Workspace inspection completed (verified clean directory).
   - Seven master specification documents initialized in `project-spec/`.
   - Phase 0: Scaffolding, `pyproject.toml`, Pydantic v2 schemas (`src/trustworthy_rag/schemas/models.py`), config loader (`src/trustworthy_rag/config.py`), and unit tests (9/9 passed).
   - Phase 1: Benchmark dataset ingestion engine (`src/trustworthy_rag/data/ingestion.py`), sliding-window chunker (`src/trustworthy_rag/data/chunker.py`), frozen splits (50 dev, 100 val, 250 test), SHA-256 manifest (`data/splits/manifest_sha256.json`), and unit tests (17/17 passed).
   - Phase 2: BM25 retriever, dense retriever, hybrid rank fusion, context builder with offset tracking, baseline generator, and integration tests (25/25 passed). Executed 100-query validation baseline (`EXP_BASELINE_VAL_001`).
-  - TSK-001 through TSK-009 marked DONE.
+  - Phase 3: Controlled perturbation stress suite with all 4 operators (distractor injection, key passage deletion, near-duplicate injection, explicit contradiction injection) and automated unit tests (30/30 passed).
+  - TSK-001 through TSK-013 marked DONE.
 - **In-Progress Tasks:**
-  - TSK-010: Distractor passage injection operator.
-  - TSK-011: Key passage deletion operator.
-  - TSK-012: Near-duplicate passage injection operator.
-  - TSK-013: Explicit contradiction injection operator.
+  - TSK-014: Pairwise cross-passage contradiction analyzer.
+  - TSK-015: Relevance and evidence coverage analyzers.
+  - TSK-016: Tri-state decision policy engine.
+  - TSK-017: Post-generation citation grounding audit.
 - **Blocked Tasks:** None.
 - **Active Technical Configuration:**
   - Python Environment: Python 3.14.6 (`C:\Users\ARYAN - AYUSH\AppData\Local\Python\bin\python.exe`)
@@ -132,8 +133,8 @@ notes: str
   - Architecture: Modular Python package (`src/trustworthy_rag`)
   - Testing Framework: `pytest`
 - **Next Recommended Action:**
-  - Implement `src/trustworthy_rag/stress/` perturbation operators with manifest logging.
-  - Write unit tests verifying each perturbation operator against clean sets.
+  - Implement `src/trustworthy_rag/evidence/` contradiction, relevance, coverage, and citation analyzers.
+  - Implement `src/trustworthy_rag/policy/decision.py`.
 
 ---
 

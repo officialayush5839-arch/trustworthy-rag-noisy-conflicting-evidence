@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-14T21:44:20",
+  "updated_at": "2026-10-14T22:05:20",
   "project": "trustworthy-rag-noisy-conflicting-evidence",
   "phases": [
     {
@@ -23,13 +23,13 @@
     {
       "id": "phase_3",
       "title": "Phase 3: Controlled Perturbation Suite",
-      "status": "IN_PROGRESS",
-      "completed_at": null
+      "status": "COMPLETED",
+      "completed_at": "2026-10-14T22:05:04"
     },
     {
       "id": "phase_4",
       "title": "Phase 4: Evidence Analysis and Calibrated Abstention",
-      "status": "PENDING",
+      "status": "IN_PROGRESS",
       "completed_at": null
     },
     {
