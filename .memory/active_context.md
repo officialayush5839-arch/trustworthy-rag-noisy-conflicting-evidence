@@ -4,8 +4,8 @@
 
 - **Project:** trustworthy-rag-noisy-conflicting-evidence
 - **Target Ports:** Frontend: 2217 | Backend: 2218
-- **Active Phase:** phase_2 (Phase 2: Conventional RAG Baseline)
+- **Active Phase:** phase_3 (Phase 3: Controlled Perturbation Suite)
 - **Phase Status:** IN_PROGRESS
-- **Current Task:** TSK-005, TSK-006, TSK-007, TSK-008, TSK-009: Build BM25 retriever, dense embedding retriever, rank fusion (RRF), context builder, and baseline generator.
+- **Current Task:** TSK-010, TSK-011, TSK-012, TSK-013: Implement four-condition stress perturbation operators (distractor injection, key passage removal, near-duplicate injection, explicit contradiction injection) with cryptographic manifest tracking.
 - **Quota / Limit State:** NORMAL
-- **Immediate Next Action:** Create `.memory/master_prompts/master_prompt_phase_2.md` and implement retrieval and baseline generation engines.
+- **Immediate Next Action:** Create `.memory/master_prompts/master_prompt_phase_3.md` and implement perturbation operators.

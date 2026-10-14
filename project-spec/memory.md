@@ -86,7 +86,7 @@ notes: str
 ### 4.2 Initial Experiment Registry Table
 | Experiment ID | Hypothesis | Dataset Split | Retriever | Perturbation | Seed | Status | Key Metric Findings | Output Artifact Location |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| *No experiments executed yet* | — | — | — | — | — | `PLANNED` | *Awaiting Phase 2 baseline* | — |
+| **EXP_BASELINE_VAL_001** | H1 / Baseline Control | validation ($N=100$) | BM25 + Dense (Hybrid RRF) | clean | 42 | `COMPLETED` | 100 queries answered (100% coverage), mean latency 0.03ms, verified bracketed citations | `experiments/runs/EXP_BASELINE/predictions.jsonl` |
 
 ---
 
@@ -95,7 +95,7 @@ notes: str
 *Strict Rule: Do not insert fabricated or anticipated results. Entries in this section represent verified empirical facts.*
 
 ### 5.1 Verified Findings
-*No experiments have been conducted yet. This section will be populated strictly upon completion of validated experimental runs.*
+1. **Conventional RAG Baseline Coverage & Latency**: The conventional baseline pipeline (`BM25Retriever` + `DenseRetriever` + `RankFusionEngine` + `ContextBuilder` + `AnswerGenerator`) executes end-to-end on $N=100$ validation queries with 100% answer coverage (unconditional generation) and produces structured `GenerationResult` JSONL logs with verifiable chunk citations (`experiments/runs/EXP_BASELINE/predictions.jsonl`).
 
 ### 5.2 Preliminary Findings
 *None to date.*
@@ -112,19 +112,19 @@ notes: str
 
 ## 6. Current Project State
 
-- **Current Active Phase:** `Phase 2: Conventional RAG Baseline`
+- **Current Active Phase:** `Phase 3: Controlled Perturbation Suite`
 - **Completed Tasks:**
   - Workspace inspection completed (verified clean directory).
   - Seven master specification documents initialized in `project-spec/`.
   - Phase 0: Scaffolding, `pyproject.toml`, Pydantic v2 schemas (`src/trustworthy_rag/schemas/models.py`), config loader (`src/trustworthy_rag/config.py`), and unit tests (9/9 passed).
   - Phase 1: Benchmark dataset ingestion engine (`src/trustworthy_rag/data/ingestion.py`), sliding-window chunker (`src/trustworthy_rag/data/chunker.py`), frozen splits (50 dev, 100 val, 250 test), SHA-256 manifest (`data/splits/manifest_sha256.json`), and unit tests (17/17 passed).
-  - TSK-001, TSK-002, TSK-003, TSK-004 marked DONE.
+  - Phase 2: BM25 retriever, dense retriever, hybrid rank fusion, context builder with offset tracking, baseline generator, and integration tests (25/25 passed). Executed 100-query validation baseline (`EXP_BASELINE_VAL_001`).
+  - TSK-001 through TSK-009 marked DONE.
 - **In-Progress Tasks:**
-  - TSK-005: Sparse BM25 retrieval engine.
-  - TSK-006: Dense vector retrieval engine.
-  - TSK-007: Reciprocal Rank Fusion (RRF) and score normalizer.
-  - TSK-008: Provenance-anchored context builder.
-  - TSK-009: Baseline generation harness and pinned model runners.
+  - TSK-010: Distractor passage injection operator.
+  - TSK-011: Key passage deletion operator.
+  - TSK-012: Near-duplicate passage injection operator.
+  - TSK-013: Explicit contradiction injection operator.
 - **Blocked Tasks:** None.
 - **Active Technical Configuration:**
   - Python Environment: Python 3.14.6 (`C:\Users\ARYAN - AYUSH\AppData\Local\Python\bin\python.exe`)
@@ -132,8 +132,8 @@ notes: str
   - Architecture: Modular Python package (`src/trustworthy_rag`)
   - Testing Framework: `pytest`
 - **Next Recommended Action:**
-  - Implement `src/trustworthy_rag/retrieval/bm25.py`, `src/trustworthy_rag/retrieval/dense.py`, and `src/trustworthy_rag/retrieval/fusion.py`.
-  - Run integration tests on hybrid retrieval and baseline generator.
+  - Implement `src/trustworthy_rag/stress/` perturbation operators with manifest logging.
+  - Write unit tests verifying each perturbation operator against clean sets.
 
 ---
 

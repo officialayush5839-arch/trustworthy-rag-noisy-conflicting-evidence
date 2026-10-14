@@ -96,7 +96,7 @@ Tasks in this registry represent the atomic operational units of the project. Ev
 
 #### TSK-005: Implement Sparse BM25 Retrieval Engine
 - **Phase**: Phase 2
-- **Priority**: P0 | **Status**: `TODO`
+- **Priority**: P0 | **Status**: `DONE`
 - **Dependencies**: TSK-003
 - **Affected Files**: `src/trustworthy_rag/retrieval/bm25.py`
 - **Implementation Steps**:
@@ -111,7 +111,7 @@ Tasks in this registry represent the atomic operational units of the project. Ev
 
 #### TSK-006: Implement Dense Vector Retrieval Engine
 - **Phase**: Phase 2
-- **Priority**: P0 | **Status**: `TODO`
+- **Priority**: P0 | **Status**: `DONE`
 - **Dependencies**: TSK-003
 - **Affected Files**: `src/trustworthy_rag/retrieval/dense.py`
 - **Implementation Steps**:
@@ -126,7 +126,7 @@ Tasks in this registry represent the atomic operational units of the project. Ev
 
 #### TSK-007: Implement Reciprocal Rank Fusion (RRF) and Score Normalizer
 - **Phase**: Phase 2
-- **Priority**: P0 | **Status**: `TODO`
+- **Priority**: P0 | **Status**: `DONE`
 - **Dependencies**: TSK-005, TSK-006
 - **Affected Files**: `src/trustworthy_rag/retrieval/fusion.py`
 - **Implementation Steps**:
@@ -145,7 +145,7 @@ Tasks in this registry represent the atomic operational units of the project. Ev
 
 #### TSK-008: Implement Provenance-Anchored Context Builder
 - **Phase**: Phase 2
-- **Priority**: P0 | **Status**: `TODO`
+- **Priority**: P0 | **Status**: `DONE`
 - **Dependencies**: TSK-007
 - **Affected Files**: `src/trustworthy_rag/generation/context_builder.py`
 - **Implementation Steps**:
@@ -160,7 +160,7 @@ Tasks in this registry represent the atomic operational units of the project. Ev
 
 #### TSK-009: Implement Baseline Generation Harness and Pinned Model Runners
 - **Phase**: Phase 2
-- **Priority**: P0 | **Status**: `TODO`
+- **Priority**: P0 | **Status**: `DONE`
 - **Dependencies**: TSK-008
 - **Affected Files**: `src/trustworthy_rag/generation/generator.py`, `configs/baseline_rag.yaml`
 - **Implementation Steps**:
