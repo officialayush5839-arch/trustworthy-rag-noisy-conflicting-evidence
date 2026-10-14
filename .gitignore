@@ -1,0 +1,60 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Environment variables & secrets
+.env
+.env.*
+!.env.example
+
+# IDE & Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Data & Models & Large Artifacts
+data/raw/
+data/processed/
+models/checkpoints/
+*.pt
+*.bin
+*.onnx
+*.safetensors
+
+# Logs & Experiment temporary files
+logs/
+*.log
+experiments/scratch/
+
+# OS specific
+.DS_Store
+Thumbs.db
