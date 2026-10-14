@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-14T21:33:30",
+  "updated_at": "2026-10-14T21:38:40",
   "project": "trustworthy-rag-noisy-conflicting-evidence",
   "phases": [
     {
@@ -11,13 +11,13 @@
     {
       "id": "phase_1",
       "title": "Phase 1: Data and Benchmark Preparation",
-      "status": "IN_PROGRESS",
-      "completed_at": null
+      "status": "COMPLETED",
+      "completed_at": "2026-10-14T21:38:22"
     },
     {
       "id": "phase_2",
       "title": "Phase 2: Conventional RAG Baseline",
-      "status": "PENDING",
+      "status": "IN_PROGRESS",
       "completed_at": null
     },
     {

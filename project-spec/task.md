@@ -62,7 +62,7 @@ Tasks in this registry represent the atomic operational units of the project. Ev
 
 #### TSK-003: Implement Benchmark Ingestion and Document Chunking Engine
 - **Phase**: Phase 1
-- **Priority**: P0 | **Status**: `TODO`
+- **Priority**: P0 | **Status**: `DONE`
 - **Dependencies**: TSK-002
 - **Affected Files**: `src/trustworthy_rag/data/ingestion.py`, `src/trustworthy_rag/data/chunker.py`
 - **Implementation Steps**:
@@ -77,7 +77,7 @@ Tasks in this registry represent the atomic operational units of the project. Ev
 
 #### TSK-004: Freeze and Hash Auditable Benchmark Splits
 - **Phase**: Phase 1
-- **Priority**: P0 | **Status**: `TODO`
+- **Priority**: P0 | **Status**: `DONE`
 - **Dependencies**: TSK-003
 - **Affected Files**: `scripts/freeze_datasets.py`, `data/splits/manifest_sha256.json`
 - **Implementation Steps**:

@@ -112,15 +112,19 @@ notes: str
 
 ## 6. Current Project State
 
-- **Current Active Phase:** `Phase 1: Data and Benchmark Preparation`
+- **Current Active Phase:** `Phase 2: Conventional RAG Baseline`
 - **Completed Tasks:**
   - Workspace inspection completed (verified clean directory).
   - Seven master specification documents initialized in `project-spec/`.
   - Phase 0: Scaffolding, `pyproject.toml`, Pydantic v2 schemas (`src/trustworthy_rag/schemas/models.py`), config loader (`src/trustworthy_rag/config.py`), and unit tests (9/9 passed).
-  - TSK-001 and TSK-002 marked DONE.
+  - Phase 1: Benchmark dataset ingestion engine (`src/trustworthy_rag/data/ingestion.py`), sliding-window chunker (`src/trustworthy_rag/data/chunker.py`), frozen splits (50 dev, 100 val, 250 test), SHA-256 manifest (`data/splits/manifest_sha256.json`), and unit tests (17/17 passed).
+  - TSK-001, TSK-002, TSK-003, TSK-004 marked DONE.
 - **In-Progress Tasks:**
-  - TSK-003: Benchmark ingestion and document chunking engine.
-  - TSK-004: Freeze and hash auditable benchmark splits.
+  - TSK-005: Sparse BM25 retrieval engine.
+  - TSK-006: Dense vector retrieval engine.
+  - TSK-007: Reciprocal Rank Fusion (RRF) and score normalizer.
+  - TSK-008: Provenance-anchored context builder.
+  - TSK-009: Baseline generation harness and pinned model runners.
 - **Blocked Tasks:** None.
 - **Active Technical Configuration:**
   - Python Environment: Python 3.14.6 (`C:\Users\ARYAN - AYUSH\AppData\Local\Python\bin\python.exe`)
@@ -128,8 +132,8 @@ notes: str
   - Architecture: Modular Python package (`src/trustworthy_rag`)
   - Testing Framework: `pytest`
 - **Next Recommended Action:**
-  - Implement `src/trustworthy_rag/data/ingestion.py` and `src/trustworthy_rag/data/chunker.py`.
-  - Download / curate auditable test subset for RAGTruth / QA benchmark.
+  - Implement `src/trustworthy_rag/retrieval/bm25.py`, `src/trustworthy_rag/retrieval/dense.py`, and `src/trustworthy_rag/retrieval/fusion.py`.
+  - Run integration tests on hybrid retrieval and baseline generator.
 
 ---
 
