@@ -81,18 +81,25 @@ cd trustworthy-rag-noisy-conflicting-evidence
 pip install -r requirements.txt
 ```
 
-### 2. Run Reproduction (Windows)
-Double click or run `run.bat`:
+### 2. Launch Interactive Web Platform & Dashboard (Windows)
+Double-click or run [`run.bat`](file:///c:/Users/ARYAN%20-%20AYUSH/OneDrive/Desktop/Trustworthy%20Retrieval-Augmented%20Generation%20Under%20Noisy%20and%20Conflicting%20Evidence/run.bat):
 ```cmd
 run.bat
 ```
+*Automatically validates the test suite, launches your browser, and opens the interactive dashboard at **`http://localhost:2217`**.*
 
-### 3. Run Reproduction (CLI / Linux / macOS)
+### 3. Launch Web Platform (CLI / Linux / macOS)
+```bash
+uvicorn trustworthy_rag.server.app:app --host 127.0.0.1 --port 2217
+```
+Then visit **`http://localhost:2217`** in your browser.
+
+### 4. Run Standalone CLI Reproduction
 ```bash
 python run_reproduction.py
 ```
 
-### 4. Run Pytest Suite
+### 5. Run Pytest Suite
 ```bash
 pytest tests
 ```
