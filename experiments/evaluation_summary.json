@@ -46,7 +46,7 @@
         "aurcc": 0.0
       },
       "passage_removal": {
-        "coverage": 0.92,
+        "coverage": 1.0,
         "faithfulness": 1.0,
         "selective_risk": 0.0,
         "aurcc": 0.0
@@ -98,13 +98,13 @@
     },
     "proposed_full": {
       "clean": {
-        "coverage": 0.66,
+        "coverage": 0.7,
         "faithfulness": 1.0,
         "selective_risk": 0.0,
         "aurcc": 0.0
       },
       "distractor": {
-        "coverage": 0.66,
+        "coverage": 0.7,
         "faithfulness": 1.0,
         "selective_risk": 0.0,
         "aurcc": 0.0
@@ -116,7 +116,7 @@
         "aurcc": 0.0
       },
       "near_duplicate": {
-        "coverage": 0.64,
+        "coverage": 0.7,
         "faithfulness": 1.0,
         "selective_risk": 0.0,
         "aurcc": 0.0
@@ -130,13 +130,13 @@
     },
     "ablation_no_contradiction": {
       "clean": {
-        "coverage": 0.66,
+        "coverage": 0.7,
         "faithfulness": 1.0,
         "selective_risk": 0.0,
         "aurcc": 0.0
       },
       "distractor": {
-        "coverage": 0.66,
+        "coverage": 0.7,
         "faithfulness": 1.0,
         "selective_risk": 0.0,
         "aurcc": 0.0
@@ -148,13 +148,13 @@
         "aurcc": 0.0
       },
       "near_duplicate": {
-        "coverage": 0.66,
+        "coverage": 0.7,
         "faithfulness": 1.0,
         "selective_risk": 0.0,
         "aurcc": 0.0
       },
       "contradiction": {
-        "coverage": 0.66,
+        "coverage": 0.7,
         "faithfulness": 1.0,
         "selective_risk": 0.0,
         "aurcc": 0.0
@@ -174,7 +174,7 @@
         "aurcc": 0.0
       },
       "passage_removal": {
-        "coverage": 0.92,
+        "coverage": 1.0,
         "faithfulness": 1.0,
         "selective_risk": 0.0,
         "aurcc": 0.0
@@ -194,13 +194,13 @@
     },
     "ablation_no_relevance": {
       "clean": {
-        "coverage": 0.66,
+        "coverage": 0.7,
         "faithfulness": 1.0,
         "selective_risk": 0.0,
         "aurcc": 0.0
       },
       "distractor": {
-        "coverage": 0.66,
+        "coverage": 0.7,
         "faithfulness": 1.0,
         "selective_risk": 0.0,
         "aurcc": 0.0
@@ -212,7 +212,7 @@
         "aurcc": 0.0
       },
       "near_duplicate": {
-        "coverage": 0.66,
+        "coverage": 0.7,
         "faithfulness": 1.0,
         "selective_risk": 0.0,
         "aurcc": 0.0
