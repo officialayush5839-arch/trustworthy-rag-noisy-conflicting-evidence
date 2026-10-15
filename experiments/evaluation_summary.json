@@ -1,33 +1,45 @@
 {
+  "metadata": {
+    "total_queries_per_condition": 20,
+    "allow_mock": true,
+    "generator_backend": "mock",
+    "generator_model": "meta-llama/Llama-3.1-8B-Instruct",
+    "execution_audit_pass": true
+  },
   "methods": {
     "baseline_unconditional": {
       "clean": {
         "coverage": 1.0,
-        "faithfulness": 1.0,
+        "abstention_rate": 0.0,
+        "answered_faithfulness": 1.0,
         "selective_risk": 0.0,
         "aurcc": 0.0
       },
       "distractor": {
         "coverage": 1.0,
-        "faithfulness": 1.0,
+        "abstention_rate": 0.0,
+        "answered_faithfulness": 1.0,
         "selective_risk": 0.0,
         "aurcc": 0.0
       },
       "passage_removal": {
         "coverage": 1.0,
-        "faithfulness": 1.0,
+        "abstention_rate": 0.0,
+        "answered_faithfulness": 1.0,
         "selective_risk": 0.0,
         "aurcc": 0.0
       },
       "near_duplicate": {
         "coverage": 1.0,
-        "faithfulness": 1.0,
+        "abstention_rate": 0.0,
+        "answered_faithfulness": 1.0,
         "selective_risk": 0.0,
         "aurcc": 0.0
       },
       "contradiction": {
         "coverage": 1.0,
-        "faithfulness": 1.0,
+        "abstention_rate": 0.0,
+        "answered_faithfulness": 1.0,
         "selective_risk": 0.0,
         "aurcc": 0.0
       }
@@ -35,31 +47,36 @@
     "baseline_retrieval_only": {
       "clean": {
         "coverage": 1.0,
-        "faithfulness": 1.0,
+        "abstention_rate": 0.0,
+        "answered_faithfulness": 1.0,
         "selective_risk": 0.0,
         "aurcc": 0.0
       },
       "distractor": {
         "coverage": 1.0,
-        "faithfulness": 1.0,
+        "abstention_rate": 0.0,
+        "answered_faithfulness": 1.0,
         "selective_risk": 0.0,
         "aurcc": 0.0
       },
       "passage_removal": {
-        "coverage": 1.0,
-        "faithfulness": 1.0,
+        "coverage": 0.8,
+        "abstention_rate": 0.2,
+        "answered_faithfulness": 1.0,
         "selective_risk": 0.0,
-        "aurcc": 0.0
+        "aurcc": 0.0107
       },
       "near_duplicate": {
         "coverage": 1.0,
-        "faithfulness": 1.0,
+        "abstention_rate": 0.0,
+        "answered_faithfulness": 1.0,
         "selective_risk": 0.0,
         "aurcc": 0.0
       },
       "contradiction": {
         "coverage": 1.0,
-        "faithfulness": 1.0,
+        "abstention_rate": 0.0,
+        "answered_faithfulness": 1.0,
         "selective_risk": 0.0,
         "aurcc": 0.0
       }
@@ -67,31 +84,36 @@
     "baseline_confidence_only": {
       "clean": {
         "coverage": 1.0,
-        "faithfulness": 1.0,
+        "abstention_rate": 0.0,
+        "answered_faithfulness": 1.0,
         "selective_risk": 0.0,
         "aurcc": 0.0
       },
       "distractor": {
         "coverage": 1.0,
-        "faithfulness": 1.0,
+        "abstention_rate": 0.0,
+        "answered_faithfulness": 1.0,
         "selective_risk": 0.0,
         "aurcc": 0.0
       },
       "passage_removal": {
-        "coverage": 0.0,
-        "faithfulness": 1.0,
+        "coverage": 0.8,
+        "abstention_rate": 0.2,
+        "answered_faithfulness": 1.0,
         "selective_risk": 0.0,
-        "aurcc": 0.0
+        "aurcc": 0.0107
       },
       "near_duplicate": {
         "coverage": 1.0,
-        "faithfulness": 1.0,
+        "abstention_rate": 0.0,
+        "answered_faithfulness": 1.0,
         "selective_risk": 0.0,
         "aurcc": 0.0
       },
       "contradiction": {
-        "coverage": 0.0,
-        "faithfulness": 1.0,
+        "coverage": 1.0,
+        "abstention_rate": 0.0,
+        "answered_faithfulness": 1.0,
         "selective_risk": 0.0,
         "aurcc": 0.0
       }
@@ -99,129 +121,149 @@
     "proposed_full": {
       "clean": {
         "coverage": 0.7,
-        "faithfulness": 1.0,
+        "abstention_rate": 0.3,
+        "answered_faithfulness": 1.0,
         "selective_risk": 0.0,
-        "aurcc": 0.0
+        "aurcc": 0.0591
       },
       "distractor": {
         "coverage": 0.7,
-        "faithfulness": 1.0,
+        "abstention_rate": 0.3,
+        "answered_faithfulness": 1.0,
         "selective_risk": 0.0,
-        "aurcc": 0.0
+        "aurcc": 0.0591
       },
       "passage_removal": {
         "coverage": 0.0,
-        "faithfulness": 1.0,
+        "abstention_rate": 1.0,
+        "answered_faithfulness": null,
         "selective_risk": 0.0,
-        "aurcc": 0.0
+        "aurcc": 0.5
       },
       "near_duplicate": {
         "coverage": 0.7,
-        "faithfulness": 1.0,
+        "abstention_rate": 0.3,
+        "answered_faithfulness": 1.0,
         "selective_risk": 0.0,
-        "aurcc": 0.0
+        "aurcc": 0.0591
       },
       "contradiction": {
         "coverage": 0.0,
-        "faithfulness": 1.0,
+        "abstention_rate": 1.0,
+        "answered_faithfulness": null,
         "selective_risk": 0.0,
-        "aurcc": 0.0
+        "aurcc": 0.5
       }
     },
     "ablation_no_contradiction": {
       "clean": {
         "coverage": 0.7,
-        "faithfulness": 1.0,
+        "abstention_rate": 0.3,
+        "answered_faithfulness": 1.0,
         "selective_risk": 0.0,
-        "aurcc": 0.0
+        "aurcc": 0.0591
       },
       "distractor": {
         "coverage": 0.7,
-        "faithfulness": 1.0,
+        "abstention_rate": 0.3,
+        "answered_faithfulness": 1.0,
         "selective_risk": 0.0,
-        "aurcc": 0.0
+        "aurcc": 0.0591
       },
       "passage_removal": {
         "coverage": 0.0,
-        "faithfulness": 1.0,
+        "abstention_rate": 1.0,
+        "answered_faithfulness": null,
         "selective_risk": 0.0,
-        "aurcc": 0.0
+        "aurcc": 0.5
       },
       "near_duplicate": {
         "coverage": 0.7,
-        "faithfulness": 1.0,
+        "abstention_rate": 0.3,
+        "answered_faithfulness": 1.0,
         "selective_risk": 0.0,
-        "aurcc": 0.0
+        "aurcc": 0.0591
       },
       "contradiction": {
         "coverage": 0.7,
-        "faithfulness": 1.0,
+        "abstention_rate": 0.3,
+        "answered_faithfulness": 1.0,
         "selective_risk": 0.0,
-        "aurcc": 0.0
+        "aurcc": 0.1477
       }
     },
     "ablation_no_coverage": {
       "clean": {
         "coverage": 1.0,
-        "faithfulness": 1.0,
+        "abstention_rate": 0.0,
+        "answered_faithfulness": 1.0,
         "selective_risk": 0.0,
         "aurcc": 0.0
       },
       "distractor": {
         "coverage": 1.0,
-        "faithfulness": 1.0,
+        "abstention_rate": 0.0,
+        "answered_faithfulness": 1.0,
         "selective_risk": 0.0,
         "aurcc": 0.0
       },
       "passage_removal": {
-        "coverage": 1.0,
-        "faithfulness": 1.0,
+        "coverage": 0.8,
+        "abstention_rate": 0.2,
+        "answered_faithfulness": 1.0,
         "selective_risk": 0.0,
-        "aurcc": 0.0
+        "aurcc": 0.0107
       },
       "near_duplicate": {
-        "coverage": 1.0,
-        "faithfulness": 1.0,
+        "coverage": 0.95,
+        "abstention_rate": 0.05,
+        "answered_faithfulness": 1.0,
         "selective_risk": 0.0,
-        "aurcc": 0.0
+        "aurcc": 0.0149
       },
       "contradiction": {
         "coverage": 0.0,
-        "faithfulness": 1.0,
+        "abstention_rate": 1.0,
+        "answered_faithfulness": null,
         "selective_risk": 0.0,
-        "aurcc": 0.0
+        "aurcc": 0.5
       }
     },
     "ablation_no_relevance": {
       "clean": {
         "coverage": 0.7,
-        "faithfulness": 1.0,
+        "abstention_rate": 0.3,
+        "answered_faithfulness": 1.0,
         "selective_risk": 0.0,
-        "aurcc": 0.0
+        "aurcc": 0.0591
       },
       "distractor": {
         "coverage": 0.7,
-        "faithfulness": 1.0,
+        "abstention_rate": 0.3,
+        "answered_faithfulness": 1.0,
         "selective_risk": 0.0,
-        "aurcc": 0.0
+        "aurcc": 0.0591
       },
       "passage_removal": {
         "coverage": 0.0,
-        "faithfulness": 1.0,
+        "abstention_rate": 1.0,
+        "answered_faithfulness": null,
         "selective_risk": 0.0,
-        "aurcc": 0.0
+        "aurcc": 0.5
       },
       "near_duplicate": {
         "coverage": 0.7,
-        "faithfulness": 1.0,
+        "abstention_rate": 0.3,
+        "answered_faithfulness": 1.0,
         "selective_risk": 0.0,
-        "aurcc": 0.0
+        "aurcc": 0.0591
       },
       "contradiction": {
         "coverage": 0.0,
-        "faithfulness": 1.0,
+        "abstention_rate": 1.0,
+        "answered_faithfulness": null,
         "selective_risk": 0.0,
-        "aurcc": 0.0
+        "aurcc": 0.5
       }
     }
   }

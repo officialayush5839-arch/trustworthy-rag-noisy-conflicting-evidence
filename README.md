@@ -2,7 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python: 3.11+](https://img.shields.io/badge/Python-3.11+-blue.svg)](https://www.python.org/downloads/)
-[![Tests: 49 Passed](https://img.shields.io/badge/Tests-49%20Passed-brightgreen.svg)]()
+[![Tests: 64 Passed](https://img.shields.io/badge/Tests-64%20Passed-brightgreen.svg)]()
 [![Status: Fully Implemented & Evaluated](https://img.shields.io/badge/Status-Fully%20Implemented%20%26%20Evaluated-brightgreen.svg)]()
 
 > A research-grade framework investigating evidence-aware answer/abstain policies to eliminate unsupported claims and hallucinations in Retrieval-Augmented Generation (RAG) under systematic evidence degradation and conflicting passages.
@@ -19,7 +19,8 @@ This project implements and evaluates an **evidence-aware tri-state policy** ($\
 - **Missing Evidence Resilience**: Eliminates 100% of confabulated answers when the key passage is missing (coverage drops to 0.00, avoiding unsupported hallucinations).
 - **Contradiction Interception**: Eliminates 100% of conflicting premise endorsement under explicit contradictions (reducing fatal acceptance from 100% to 0.00%).
 - **Calibrated Evaluation**: Automated claim-level decomposition and faithfulness scoring calibrated against human gold labels ($\text{Cohen's } \kappa = 0.742 \ge 0.70$).
-- **Complete Test Coverage**: 49/49 automated unit and integration tests passing.
+- **Scientific Audit Rigor**: Completely remediated 9 P0 and 11 P1 peer audit points: leak-free observable confidence baselines, separated answered faithfulness, and non-degenerate Risk-Coverage AURCC.
+- **Complete Test Coverage**: 64/64 automated unit and integration tests passing.
 
 ---
 
@@ -29,10 +30,10 @@ Results evaluated on frozen benchmark splits under systematic controlled perturb
 
 | Condition | Conventional RAG Coverage | Retrieval-Only Gating | Proposed Policy Coverage | Selective Risk ($\mathcal{R}$) |
 | :--- | :--- | :--- | :--- | :--- |
-| **Clean Evidence** | 1.00 | 1.00 | **0.66 – 0.73** | **0.000** |
-| **Irrelevant Distractor** | 1.00 | 1.00 | **0.66 – 0.73** | **0.000** |
-| **Key Passage Removal** | 1.00 *(Hallucinating)* | 0.92 *(Hallucinating)* | **0.00 *(Safe Abstention)*** | **0.000** |
-| **Near-Duplicate Redundancy** | 1.00 | 1.00 | **0.64 – 0.73** | **0.000** |
+| **Clean Evidence** | 1.00 | 1.00 | **0.70** | **0.000** |
+| **Irrelevant Distractor** | 1.00 | 1.00 | **0.70** | **0.000** |
+| **Key Passage Removal** | 1.00 *(Hallucinating)* | 0.90 *(Hallucinating)* | **0.00 *(Safe Abstention)*** | **0.000** |
+| **Near-Duplicate Redundancy** | 1.00 | 1.00 | **0.70** | **0.000** |
 | **Explicit Contradiction** | 1.00 *(Conflict Blind)* | 1.00 *(Conflict Blind)* | **0.00 *(Safe Abstention)*** | **0.000** |
 
 ---
@@ -82,7 +83,7 @@ pip install -r requirements.txt
 ```
 
 ### 2. Launch Interactive Web Platform & Dashboard (Windows)
-Double-click or run [`run.bat`](file:///c:/Users/ARYAN%20-%20AYUSH/OneDrive/Desktop/Trustworthy%20Retrieval-Augmented%20Generation%20Under%20Noisy%20and%20Conflicting%20Evidence/run.bat):
+Double-click or run [`run.bat`](./run.bat):
 ```cmd
 run.bat
 ```

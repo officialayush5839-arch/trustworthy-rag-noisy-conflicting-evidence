@@ -1,0 +1,228 @@
+{
+  "methods": {
+    "baseline_unconditional": {
+      "clean": {
+        "coverage": 1.0,
+        "faithfulness": 1.0,
+        "selective_risk": 0.0,
+        "aurcc": 0.0
+      },
+      "distractor": {
+        "coverage": 1.0,
+        "faithfulness": 1.0,
+        "selective_risk": 0.0,
+        "aurcc": 0.0
+      },
+      "passage_removal": {
+        "coverage": 1.0,
+        "faithfulness": 1.0,
+        "selective_risk": 0.0,
+        "aurcc": 0.0
+      },
+      "near_duplicate": {
+        "coverage": 1.0,
+        "faithfulness": 1.0,
+        "selective_risk": 0.0,
+        "aurcc": 0.0
+      },
+      "contradiction": {
+        "coverage": 1.0,
+        "faithfulness": 1.0,
+        "selective_risk": 0.0,
+        "aurcc": 0.0
+      }
+    },
+    "baseline_retrieval_only": {
+      "clean": {
+        "coverage": 1.0,
+        "faithfulness": 1.0,
+        "selective_risk": 0.0,
+        "aurcc": 0.0
+      },
+      "distractor": {
+        "coverage": 1.0,
+        "faithfulness": 1.0,
+        "selective_risk": 0.0,
+        "aurcc": 0.0
+      },
+      "passage_removal": {
+        "coverage": 1.0,
+        "faithfulness": 1.0,
+        "selective_risk": 0.0,
+        "aurcc": 0.0
+      },
+      "near_duplicate": {
+        "coverage": 1.0,
+        "faithfulness": 1.0,
+        "selective_risk": 0.0,
+        "aurcc": 0.0
+      },
+      "contradiction": {
+        "coverage": 1.0,
+        "faithfulness": 1.0,
+        "selective_risk": 0.0,
+        "aurcc": 0.0
+      }
+    },
+    "baseline_confidence_only": {
+      "clean": {
+        "coverage": 1.0,
+        "faithfulness": 1.0,
+        "selective_risk": 0.0,
+        "aurcc": 0.0
+      },
+      "distractor": {
+        "coverage": 1.0,
+        "faithfulness": 1.0,
+        "selective_risk": 0.0,
+        "aurcc": 0.0
+      },
+      "passage_removal": {
+        "coverage": 0.0,
+        "faithfulness": 1.0,
+        "selective_risk": 0.0,
+        "aurcc": 0.0
+      },
+      "near_duplicate": {
+        "coverage": 1.0,
+        "faithfulness": 1.0,
+        "selective_risk": 0.0,
+        "aurcc": 0.0
+      },
+      "contradiction": {
+        "coverage": 0.0,
+        "faithfulness": 1.0,
+        "selective_risk": 0.0,
+        "aurcc": 0.0
+      }
+    },
+    "proposed_full": {
+      "clean": {
+        "coverage": 0.7,
+        "faithfulness": 1.0,
+        "selective_risk": 0.0,
+        "aurcc": 0.0
+      },
+      "distractor": {
+        "coverage": 0.7,
+        "faithfulness": 1.0,
+        "selective_risk": 0.0,
+        "aurcc": 0.0
+      },
+      "passage_removal": {
+        "coverage": 0.0,
+        "faithfulness": 1.0,
+        "selective_risk": 0.0,
+        "aurcc": 0.0
+      },
+      "near_duplicate": {
+        "coverage": 0.7,
+        "faithfulness": 1.0,
+        "selective_risk": 0.0,
+        "aurcc": 0.0
+      },
+      "contradiction": {
+        "coverage": 0.0,
+        "faithfulness": 1.0,
+        "selective_risk": 0.0,
+        "aurcc": 0.0
+      }
+    },
+    "ablation_no_contradiction": {
+      "clean": {
+        "coverage": 0.7,
+        "faithfulness": 1.0,
+        "selective_risk": 0.0,
+        "aurcc": 0.0
+      },
+      "distractor": {
+        "coverage": 0.7,
+        "faithfulness": 1.0,
+        "selective_risk": 0.0,
+        "aurcc": 0.0
+      },
+      "passage_removal": {
+        "coverage": 0.0,
+        "faithfulness": 1.0,
+        "selective_risk": 0.0,
+        "aurcc": 0.0
+      },
+      "near_duplicate": {
+        "coverage": 0.7,
+        "faithfulness": 1.0,
+        "selective_risk": 0.0,
+        "aurcc": 0.0
+      },
+      "contradiction": {
+        "coverage": 0.7,
+        "faithfulness": 1.0,
+        "selective_risk": 0.0,
+        "aurcc": 0.0
+      }
+    },
+    "ablation_no_coverage": {
+      "clean": {
+        "coverage": 1.0,
+        "faithfulness": 1.0,
+        "selective_risk": 0.0,
+        "aurcc": 0.0
+      },
+      "distractor": {
+        "coverage": 1.0,
+        "faithfulness": 1.0,
+        "selective_risk": 0.0,
+        "aurcc": 0.0
+      },
+      "passage_removal": {
+        "coverage": 1.0,
+        "faithfulness": 1.0,
+        "selective_risk": 0.0,
+        "aurcc": 0.0
+      },
+      "near_duplicate": {
+        "coverage": 1.0,
+        "faithfulness": 1.0,
+        "selective_risk": 0.0,
+        "aurcc": 0.0
+      },
+      "contradiction": {
+        "coverage": 0.0,
+        "faithfulness": 1.0,
+        "selective_risk": 0.0,
+        "aurcc": 0.0
+      }
+    },
+    "ablation_no_relevance": {
+      "clean": {
+        "coverage": 0.7,
+        "faithfulness": 1.0,
+        "selective_risk": 0.0,
+        "aurcc": 0.0
+      },
+      "distractor": {
+        "coverage": 0.7,
+        "faithfulness": 1.0,
+        "selective_risk": 0.0,
+        "aurcc": 0.0
+      },
+      "passage_removal": {
+        "coverage": 0.0,
+        "faithfulness": 1.0,
+        "selective_risk": 0.0,
+        "aurcc": 0.0
+      },
+      "near_duplicate": {
+        "coverage": 0.7,
+        "faithfulness": 1.0,
+        "selective_risk": 0.0,
+        "aurcc": 0.0
+      },
+      "contradiction": {
+        "coverage": 0.0,
+        "faithfulness": 1.0,
+        "selective_risk": 0.0,
+        "aurcc": 0.0
+      }
+    }
+  }
+}

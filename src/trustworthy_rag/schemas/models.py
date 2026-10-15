@@ -177,8 +177,11 @@ class EvaluationResult(BaseModel):
     method_name: str
     is_answered: bool
     is_correct: Optional[bool] = None
-    claim_faithfulness: float = Field(..., ge=0.0, le=1.0)
+    claim_faithfulness: Optional[float] = Field(None, ge=0.0, le=1.0)
+    selective_error: Optional[float] = Field(None, ge=0.0, le=1.0)
     citation_precision: float = Field(0.0, ge=0.0, le=1.0)
     citation_recall: float = Field(0.0, ge=0.0, le=1.0)
     retrieval_recall: float = Field(..., ge=0.0, le=1.0)
     atomic_claims: List[AtomicClaim] = Field(default_factory=list)
+    backend_identifier: str = Field("default", description="Model backend and revision")
+

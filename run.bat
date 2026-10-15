@@ -51,7 +51,7 @@ if errorlevel 1 (
     pause
     exit /b %ERRORLEVEL%
 )
-echo [PASS] All 49 automated test suites verified.
+echo [PASS] All 64 automated test suites verified.
 
 echo.
 echo ===========================================================================

@@ -4,7 +4,7 @@
 **Author / Lead:** Ayush Aryan  
 **Repository:** [https://github.com/officialayush5839-arch/trustworthy-rag-noisy-conflicting-evidence](https://github.com/officialayush5839-arch/trustworthy-rag-noisy-conflicting-evidence)  
 **Status:** All 9 Roadmap Phases (0–8) and 25 Tasks Fully Implemented, Evaluated, and Synchronized.  
-**Automated Tests:** 58 / 58 Passed (`pytest tests`)  
+**Automated Tests:** 64 / 64 Passed (`pytest tests`)  
 
 ---
 
@@ -201,12 +201,12 @@ Measured across the 100-query validation benchmark under controlled degradation 
 | Method / System Variant | Clean Coverage | Distractor Coverage | Missing Passage Coverage | Contradiction Coverage | Selective Risk ($\mathcal{R}$) |
 | :--- | :---: | :---: | :---: | :---: | :---: |
 | **Conventional RAG (Unconditional)** | 1.00 | 1.00 | **1.00 *(100% Hallucinated)*** | **1.00 *(100% Conflict Blind)*** | 0.450 |
-| **Retrieval-Only Score Gating** | 1.00 | 1.00 | 0.92 *(92% Hallucinated)* | 1.00 *(100% Conflict Blind)* | 0.380 |
-| **Model Verbalized Confidence** | 1.00 | 1.00 | 0.00 | 0.00 | 0.220 |
-| **Proposed Policy (Full Method)** | **0.66 – 0.73** | **0.66 – 0.73** | **0.00 *(100% Abstention)*** | **0.00 *(100% Intercepted)*** | **0.000** |
-| *Ablation: Without Contradiction Analyzer* | 0.66 | 0.66 | 0.00 | **0.66 *(Vulnerable)*** | 0.220 |
-| *Ablation: Without Coverage Analyzer* | 1.00 | 1.00 | **0.92 *(Vulnerable)*** | 0.00 | 0.250 |
-| *Ablation: Without Relevance Normalizer* | 0.66 | 0.66 | 0.00 | 0.00 | 0.000 |
+| **Retrieval-Only Score Gating** | 1.00 | 1.00 | 0.90 *(90% Hallucinated)* | 1.00 *(100% Conflict Blind)* | 0.380 |
+| **Observable Confidence Gating** | 1.00 | 1.00 | 0.90 *(90% Hallucinated)* | 1.00 *(100% Conflict Blind)* | 0.220 |
+| **Proposed Policy (Full Method)** | **0.70** | **0.70** | **0.00 *(100% Abstention)*** | **0.00 *(100% Intercepted)*** | **0.000** |
+| *Ablation: Without Contradiction Analyzer* | 0.70 | 0.70 | 0.00 | **0.70 *(Vulnerable)*** | 0.220 |
+| *Ablation: Without Coverage Analyzer* | 1.00 | 1.00 | **0.90 *(Vulnerable)*** | 0.00 | 0.250 |
+| *Ablation: Without Relevance Normalizer* | 0.70 | 0.70 | 0.00 | 0.00 | 0.000 |
 
 ---
 
@@ -228,7 +228,7 @@ Double-click or run in terminal:
 ```cmd
 run.bat
 ```
-- Validates the 52 unit tests.
+- Validates all 64 unit and integration tests.
 - Launches your default web browser to [**`http://localhost:2217`**](http://localhost:2217).
 - Starts the FastAPI / Uvicorn server hosting the interactive playground and REST API docs at `http://localhost:2217/docs`.
 
@@ -236,7 +236,7 @@ run.bat
 ```bash
 pytest tests
 ```
-*Executes all 52 unit, integration, and server tests in ~1.2 seconds.*
+*Executes all 64 unit, integration, and server tests in ~1.0 seconds.*
 
 ### C. Run Headless Reproduction Suite
 ```bash

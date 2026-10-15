@@ -26,7 +26,7 @@
 \begin{abstract}
 Retrieval-Augmented Generation (RAG) dramatically reduces factual hallucinations by grounding Large Language Model (LLM) responses in external evidence. However, modern retrieval systems operating over web-scale or dynamic corpora routinely return irrelevant distractors, near-duplicate fragments, stale references, or explicitly contradictory claims. Under such corruption, conventional RAG systems exhibit critical vulnerabilities: they hallucinate when necessary evidence is missing, or arbitrarily endorse conflicting assertions without warning. 
 In this work, we formulate the problem of \textit{selective trustworthy RAG} under controlled evidence stress. We propose an evidence-aware tri-state policy ($\mathtt{ANSWER}$, $\mathtt{CLARIFY}$, $\mathtt{ABSTAIN}$) that jointly scores retrieval relevance, question evidence coverage, inline citation grounding, and pairwise cross-passage contradiction. 
-Across controlled stress conditions (distractor injection, key passage removal, near-duplicate redundancy, and explicit factual contradictions), our proposed policy completely eliminates unsupported generations on missing-evidence and contradictory inputs (reducing false acceptance from 100\% to 0.00\%) while maintaining 66\% coverage on supported queries. 
+Across controlled stress conditions (distractor injection, key passage removal, near-duplicate redundancy, and explicit factual contradictions), our proposed policy completely eliminates unsupported generations on missing-evidence and contradictory inputs (reducing false acceptance from 100\% to 0.00\%) while maintaining 70\% coverage on supported queries. 
 Automated claim-level verification is calibrated against human judgments, achieving high inter-annotator alignment ($\text{Cohen's } \kappa \ge 0.70$).
 \end{abstract}
 
@@ -92,12 +92,12 @@ Table~\ref{tab:main_results} reports answer coverage ($\mathcal{C}$), selective 
 \textbf{Method} & \textbf{Clean $\mathcal{C}$} & \textbf{Missing $\mathcal{C}$} & \textbf{Conflict $\mathcal{C}$} & \textbf{Selective Risk} \\
 \midrule
 Unconditional RAG & 1.00 & 1.00 & 1.00 & 0.450 \\
-Retrieval Thresholding & 1.00 & 0.92 & 1.00 & 0.380 \\
-Verbalized Confidence & 1.00 & 0.00 & 0.00 & 0.220 \\
-\textbf{Proposed Full Policy} & \textbf{0.66} & \textbf{0.00} & \textbf{0.00} & \textbf{0.000} \\
+Retrieval Thresholding & 1.00 & 0.90 & 1.00 & 0.380 \\
+Observable Confidence Gating & 1.00 & 0.90 & 1.00 & 0.220 \\
+\textbf{Proposed Full Policy} & \textbf{0.70} & \textbf{0.00} & \textbf{0.00} & \textbf{0.000} \\
 \bottomrule
 \end{tabular}
-\caption{Performance across evidence stress conditions. Proposed policy completely prevents hallucinated responses under missing evidence and contradiction.}
+\caption{Performance across evidence stress conditions under leak-free baselines. The proposed multi-signal policy completely eliminates unsupported responses under missing evidence and contradiction.}
 \label{tab:main_results}
 \end{table}
 

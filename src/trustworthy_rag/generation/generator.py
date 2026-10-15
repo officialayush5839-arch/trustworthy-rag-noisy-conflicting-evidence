@@ -50,8 +50,8 @@ class AnswerGenerator:
         )
 
     def extract_citations(self, text: str, valid_chunk_ids: List[str]) -> List[Citation]:
-        """Extract bracketed chunk citations [doc_xxx_c0000] from text."""
-        raw_matches = re.findall(r"\[([a-zA-Z0-9_\-]+_c\d{4})\]", text)
+        """Extract bracketed chunk citations [chunk_id] from text."""
+        raw_matches = re.findall(r"\[([a-zA-Z0-9_\-]+)\]", text)
         citations: List[Citation] = []
         valid_set = set(valid_chunk_ids)
 
@@ -86,7 +86,7 @@ class AnswerGenerator:
                 if match:
                     snippet = match.group(1).strip()
                     # Take first sentence or up to 120 chars
-                    sent = re.split(r"(?<=[.!?])\s+", snippet)[0]
+                    sent = re.split(r"(?<=[.!?])\s+", snippet)[0].rstrip(".!?")
                     response_text = f"{sent} [{first_chunk}]."
                 else:
                     response_text = f"Substantiated by retrieved evidence [{first_chunk}]."
@@ -126,8 +126,16 @@ class AnswerGenerator:
                 logger.error(f"OpenAI generation error: {e}")
                 response_text = f"[ERROR: Generation failed: {e}]"
         else:
-            # Fallback mock
-            response_text = f"Mock response for query: {query}"
+            # Fallback mock: construct grounded response citing the primary passage
+            if context.passages and context.passages[0].text:
+                lead = context.passages[0].text.split(".")[0].strip()
+                top_cid = context.passages[0].chunk_id
+                response_text = f"{lead} [{top_cid}]."
+            elif context.included_chunk_ids:
+                top_cid = context.included_chunk_ids[0]
+                response_text = f"Mock response answering '{query}' [{top_cid}]."
+            else:
+                response_text = f"Mock response for query: {query}"
             completion_tokens = len(response_text.split())
 
         elapsed_sec = time.perf_counter() - start_time

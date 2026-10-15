@@ -2,7 +2,7 @@
 Provenance-anchored context builder for Retrieval-Augmented Generation prompts.
 """
 
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import Dict, List, Tuple
 from trustworthy_rag.schemas import RetrievedPassage
 
@@ -14,6 +14,7 @@ class AssembledContext:
     formatted_text: str
     chunk_offsets: Dict[str, Tuple[int, int]]
     included_chunk_ids: List[str]
+    passages: List[RetrievedPassage] = field(default_factory=list)
 
 
 class ContextBuilder:
@@ -25,7 +26,12 @@ class ContextBuilder:
     def assemble(self, passages: List[RetrievedPassage]) -> AssembledContext:
         """Assemble passages into formatted text block with character-offset provenance."""
         if not passages:
-            return AssembledContext(formatted_text="No relevant evidence passages available.", chunk_offsets={}, included_chunk_ids=[])
+            return AssembledContext(
+                formatted_text="No relevant evidence passages available.",
+                chunk_offsets={},
+                included_chunk_ids=[],
+                passages=[],
+            )
 
         context_lines: List[str] = []
         chunk_offsets: Dict[str, Tuple[int, int]] = {}
@@ -46,7 +52,6 @@ class ContextBuilder:
 
             chunk_offsets[p.chunk_id] = (start_offset, end_offset)
             included_chunk_ids.append(p.chunk_id)
-
             context_lines.append(full_chunk_block)
             current_char = end_offset
 
@@ -55,4 +60,5 @@ class ContextBuilder:
             formatted_text=full_context_str,
             chunk_offsets=chunk_offsets,
             included_chunk_ids=included_chunk_ids,
+            passages=passages,
         )
