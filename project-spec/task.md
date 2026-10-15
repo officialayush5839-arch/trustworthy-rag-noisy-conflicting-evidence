@@ -421,7 +421,7 @@ Tasks in this registry represent the atomic operational units of the project. Ev
 
 #### TSK-025: Author Standalone Reproduction CLI and Release Package
 - **Phase**: Phase 8
-- **Priority**: P0 | **Status**: `TODO`
+- **Priority**: P0 | **Status**: `DONE`
 - **Dependencies**: TSK-024
 - **Affected Files**: `run_reproduction.py`, `README.md`, `release_manifest.json`
 - **Implementation Steps**:
