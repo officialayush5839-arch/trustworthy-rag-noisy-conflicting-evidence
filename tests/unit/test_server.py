@@ -37,3 +37,28 @@ def test_server_query_clean():
     assert "proposed" in data
     assert "scores" in data["proposed"]
     assert "passages" in data
+
+
+def test_server_clarify_endpoint():
+    client = TestClient(app)
+    # 1. Trigger clarify or establish a session
+    from trustworthy_rag.server.app import get_pipeline
+    p = get_pipeline()
+    mgr = p["dialogue_mgr"]
+    mgr.initiate_clarification(
+        session_id="test_sess_99",
+        query="What year was it founded?",
+        missing_entities=["corporation"],
+        candidate_passages=[],
+    )
+
+    # 2. Call /api/clarify
+    res = client.post("/api/clarify", json={
+        "session_id": "test_sess_99",
+        "clarification": "ACME Corporation in 1998"
+    })
+    assert res.status_code == 200
+    data = res.json()
+    assert data["action"] == "ANSWER"
+    assert "ACME Corporation in 1998" in data["clarified_query"]
+

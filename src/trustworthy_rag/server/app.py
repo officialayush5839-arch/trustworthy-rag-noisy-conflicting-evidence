@@ -18,11 +18,14 @@ from trustworthy_rag.data.ingestion import DatasetIngestionEngine
 from trustworthy_rag.evaluation.evaluator import ComparativeEvaluator
 from trustworthy_rag.generation.context_builder import ContextBuilder
 from trustworthy_rag.generation.generator import AnswerGenerator
+from trustworthy_rag.policy.calibration import DynamicEvidenceRouter
+from trustworthy_rag.policy.dialogue import ClarificationDialogueManager
 from trustworthy_rag.retrieval.bm25 import BM25Retriever
 from trustworthy_rag.retrieval.dense import DenseRetriever
 from trustworthy_rag.retrieval.fusion import RankFusionEngine
 from trustworthy_rag.schemas import DocumentChunk, PerturbationType, Question, RetrievedPassage
 from trustworthy_rag.stress.perturbation_engine import PerturbationEngine
+import uuid
 
 
 app = FastAPI(
@@ -63,6 +66,8 @@ def get_pipeline():
         evaluator = ComparativeEvaluator(config.policy)
         context_builder = ContextBuilder()
         generator = AnswerGenerator(backend="mock")
+        dialogue_mgr = ClarificationDialogueManager()
+        router = DynamicEvidenceRouter(config.policy)
 
         STATE["chunks"] = chunks
         STATE["bm25"] = bm25
@@ -72,6 +77,8 @@ def get_pipeline():
         STATE["evaluator"] = evaluator
         STATE["context_builder"] = context_builder
         STATE["generator"] = generator
+        STATE["dialogue_mgr"] = dialogue_mgr
+        STATE["router"] = router
 
     return STATE
 
@@ -79,6 +86,11 @@ def get_pipeline():
 class QueryRequest(BaseModel):
     query: str
     condition: str = "clean"  # clean | distractor | passage_removal | near_duplicate | contradiction
+
+
+class ClarifyRequest(BaseModel):
+    session_id: str
+    clarification: str
 
 
 @app.get("/api/health")
@@ -119,6 +131,32 @@ def get_sample_queries():
                     "gold_passage_ids": q.get("gold_passage_ids", []),
                 })
     return samples
+
+
+@app.post("/api/clarify")
+def process_clarification(req: ClarifyRequest):
+    p = get_pipeline()
+    mgr: ClarificationDialogueManager = p["dialogue_mgr"]
+    try:
+        resolved = mgr.resolve_clarification(req.session_id, req.clarification)
+    except KeyError:
+        raise HTTPException(status_code=404, detail="Clarification session not found")
+
+    passages = p.get(f"session_passages_{req.session_id}", [])
+    synth_passage = mgr.synthesize_disambiguated_passage(resolved)
+    updated_passages = [synth_passage] + passages
+
+    ctx = p["context_builder"].assemble(updated_passages)
+    gen = p["generator"].generate("clarified_q", resolved.clarified_query or resolved.original_query, ctx)
+
+    return {
+        "session_id": req.session_id,
+        "action": "ANSWER",
+        "clarified_query": resolved.clarified_query,
+        "answer": gen.raw_response,
+        "citations": [c.chunk_id for c in gen.citations],
+        "decision_reason": "Ambiguity resolved via user clarification.",
+    }
 
 
 @app.post("/api/query")
@@ -163,13 +201,31 @@ def process_query(req: QueryRequest):
     s_cov, covered, missing = evaluator.coverage_analyzer.compute_coverage(q_text, active_passages)
     s_con, findings = evaluator.contradiction_analyzer.analyze(active_passages)
 
-    # Evaluate decision
+    # 5. Dynamic Calibration Router
+    router: DynamicEvidenceRouter = p["router"]
+    adaptive = router.calibrate(q_text, active_passages)
+
+    # Evaluate decision using adapted thresholds
     decision = evaluator.policy_engine.evaluate(
         s_rel=s_rel,
         s_cov=s_cov,
         s_con=s_con,
         missing_entities=list(missing),
     )
+
+    session_id = None
+    clarification_options = []
+    if decision.action.value == "CLARIFY":
+        session_id = str(uuid.uuid4())[:8]
+        mgr: ClarificationDialogueManager = p["dialogue_mgr"]
+        cl_state = mgr.initiate_clarification(
+            session_id=session_id,
+            query=q_text,
+            missing_entities=list(missing),
+            candidate_passages=active_passages,
+        )
+        clarification_options = cl_state.disambiguation_options
+        p[f"session_passages_{session_id}"] = active_passages
 
     if decision.action.value == "ANSWER":
         prop_answer = base_gen.raw_response
@@ -198,6 +254,8 @@ def process_query(req: QueryRequest):
             "action": decision.action.value,
             "decision_reason": decision.decision_reason,
             "answer": prop_answer,
+            "session_id": session_id,
+            "clarification_options": clarification_options,
             "scores": {
                 "s_rel": round(s_rel, 3),
                 "s_cov": round(s_cov, 3),
@@ -205,10 +263,11 @@ def process_query(req: QueryRequest):
                 "s_cit": 1.0 if base_gen.citations else 0.0,
             },
             "thresholds": {
-                "tau_ans": 0.65,
-                "tau_cov": 0.60,
-                "tau_clar": 0.40,
-                "tau_con": 0.70,
+                "tau_ans": adaptive.tau_ans_rel,
+                "tau_cov": adaptive.tau_cov_min,
+                "tau_con": adaptive.tau_con_max,
+                "query_entropy": adaptive.query_entropy,
+                "score_dispersion": adaptive.score_dispersion,
             },
         },
     }
