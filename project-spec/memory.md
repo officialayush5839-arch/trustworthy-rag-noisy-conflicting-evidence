@@ -112,7 +112,7 @@ notes: str
 
 ## 6. Current Project State
 
-- **Current Active Phase:** `Phase 6: Error Analysis and Robustness`
+- **Current Active Phase:** `Phase 7: Research Reporting and Manuscript Preparation`
 - **Completed Tasks:**
   - Workspace inspection completed (verified clean directory).
   - Seven master specification documents initialized in `project-spec/`.
@@ -122,9 +122,10 @@ notes: str
   - Phase 3: Controlled perturbation stress suite with all 4 operators (distractor injection, key passage deletion, near-duplicate injection, explicit contradiction injection) and automated unit tests (30/30 passed).
   - Phase 4: Contradiction analyzer (`src/trustworthy_rag/evidence/contradiction.py`), relevance & coverage analyzers, citation grounding audit, and tri-state decision policy engine (`src/trustworthy_rag/policy/decision.py`) with 43/43 passing tests.
   - Phase 5: Systematic evaluation & ablation matrix (`src/trustworthy_rag/evaluation/claims.py`, `risk_coverage.py`, `evaluator.py`, `scripts/evaluate_experiments.py`), human judge calibration ($N=100$, $\kappa \ge 0.70$), with 49/49 passing tests.
-  - TSK-001 through TSK-022 marked DONE.
+  - Phase 6: Qualitative error taxonomy and failure catalog (`reports/error_taxonomy.md`), documenting 4 error classes (ERR-FP, ERR-FA, ERR-CD, ERR-DR) and boundary cases.
+  - TSK-001 through TSK-023 marked DONE.
 - **In-Progress Tasks:**
-  - TSK-023: Conduct Qualitative Error Analysis and Construct Taxonomy.
+  - TSK-024: Author Publication-Ready Figures, Tables, and LaTeX Manuscript Draft.
 - **Blocked Tasks:** None.
 - **Active Technical Configuration:**
   - Python Environment: Python 3.14.6 (`C:\Users\ARYAN - AYUSH\AppData\Local\Python\bin\python.exe`)
@@ -132,7 +133,7 @@ notes: str
   - Architecture: Modular Python package (`src/trustworthy_rag`)
   - Testing Framework: `pytest` (49 tests passing)
 - **Next Recommended Action:**
-  - Execute Phase 6: Compile error taxonomy and breakdown report `reports/error_taxonomy.md`.
+  - Implement figure generation script `scripts/figures/generate_paper_plots.py` and author LaTeX manuscript `paper/manuscript.tex`.
 
 ---
 

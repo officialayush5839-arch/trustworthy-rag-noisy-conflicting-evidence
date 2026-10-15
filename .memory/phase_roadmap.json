@@ -41,13 +41,13 @@
     {
       "id": "phase_6",
       "title": "Phase 6: Error Analysis and Robustness",
-      "status": "IN_PROGRESS",
-      "completed_at": null
+      "status": "COMPLETED",
+      "completed_at": "2026-10-15T08:49:00"
     },
     {
       "id": "phase_7",
       "title": "Phase 7: Research Reporting and Manuscript Preparation",
-      "status": "PENDING",
+      "status": "IN_PROGRESS",
       "completed_at": null
     },
     {
