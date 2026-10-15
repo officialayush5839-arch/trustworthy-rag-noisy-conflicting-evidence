@@ -112,7 +112,7 @@ notes: str
 
 ## 6. Current Project State
 
-- **Current Active Phase:** `Phase 4: Evidence Analysis and Calibrated Abstention`
+- **Current Active Phase:** `Phase 5: Systematic Evaluation and Ablation Matrix`
 - **Completed Tasks:**
   - Workspace inspection completed (verified clean directory).
   - Seven master specification documents initialized in `project-spec/`.
@@ -120,12 +120,14 @@ notes: str
   - Phase 1: Benchmark dataset ingestion engine (`src/trustworthy_rag/data/ingestion.py`), sliding-window chunker (`src/trustworthy_rag/data/chunker.py`), frozen splits (50 dev, 100 val, 250 test), SHA-256 manifest (`data/splits/manifest_sha256.json`), and unit tests (17/17 passed).
   - Phase 2: BM25 retriever, dense retriever, hybrid rank fusion, context builder with offset tracking, baseline generator, and integration tests (25/25 passed). Executed 100-query validation baseline (`EXP_BASELINE_VAL_001`).
   - Phase 3: Controlled perturbation stress suite with all 4 operators (distractor injection, key passage deletion, near-duplicate injection, explicit contradiction injection) and automated unit tests (30/30 passed).
-  - TSK-001 through TSK-013 marked DONE.
+  - Phase 4: Contradiction analyzer (`src/trustworthy_rag/evidence/contradiction.py`), relevance & coverage analyzers, citation grounding audit, and tri-state decision policy engine (`src/trustworthy_rag/policy/decision.py`) with 43/43 passing tests.
+  - TSK-001 through TSK-017 marked DONE.
 - **In-Progress Tasks:**
-  - TSK-014: Pairwise cross-passage contradiction analyzer.
-  - TSK-015: Relevance and evidence coverage analyzers.
-  - TSK-016: Tri-state decision policy engine.
-  - TSK-017: Post-generation citation grounding audit.
+  - TSK-018: Claim-level decomposition and faithfulness evaluator.
+  - TSK-019: Risk-coverage compiler and Pareto curve generator.
+  - TSK-020: Execute mandatory baseline experiments.
+  - TSK-021: Execute full proposed method and signal ablation matrix.
+  - TSK-022: Conduct human validation of automated judges.
 - **Blocked Tasks:** None.
 - **Active Technical Configuration:**
   - Python Environment: Python 3.14.6 (`C:\Users\ARYAN - AYUSH\AppData\Local\Python\bin\python.exe`)
@@ -133,8 +135,8 @@ notes: str
   - Architecture: Modular Python package (`src/trustworthy_rag`)
   - Testing Framework: `pytest`
 - **Next Recommended Action:**
-  - Implement `src/trustworthy_rag/evidence/` contradiction, relevance, coverage, and citation analyzers.
-  - Implement `src/trustworthy_rag/policy/decision.py`.
+  - Implement `src/trustworthy_rag/evaluation/claims.py` and `src/trustworthy_rag/evaluation/risk_coverage.py`.
+  - Execute full evaluation matrix across baselines and ablations.
 
 ---
 

@@ -243,7 +243,7 @@ Tasks in this registry represent the atomic operational units of the project. Ev
 
 #### TSK-014: Implement Pairwise Cross-Passage Contradiction Analyzer
 - **Phase**: Phase 4
-- **Priority**: P0 | **Status**: `TODO`
+- **Priority**: P0 | **Status**: `DONE`
 - **Dependencies**: TSK-007
 - **Affected Files**: `src/trustworthy_rag/evidence/contradiction.py`
 - **Implementation Steps**:
@@ -258,7 +258,7 @@ Tasks in this registry represent the atomic operational units of the project. Ev
 
 #### TSK-015: Implement Relevance and Evidence Coverage Analyzers
 - **Phase**: Phase 4
-- **Priority**: P0 | **Status**: `TODO`
+- **Priority**: P0 | **Status**: `DONE`
 - **Dependencies**: TSK-007
 - **Affected Files**: `src/trustworthy_rag/evidence/coverage.py`, `src/trustworthy_rag/evidence/relevance.py`
 - **Implementation Steps**:
@@ -273,7 +273,7 @@ Tasks in this registry represent the atomic operational units of the project. Ev
 
 #### TSK-016: Implement Tri-State Decision Policy Engine
 - **Phase**: Phase 4
-- **Priority**: P0 | **Status**: `TODO`
+- **Priority**: P0 | **Status**: `DONE`
 - **Dependencies**: TSK-014, TSK-015
 - **Affected Files**: `src/trustworthy_rag/policy/decision.py`, `configs/policy_calibrated.yaml`
 - **Implementation Steps**:
@@ -288,7 +288,7 @@ Tasks in this registry represent the atomic operational units of the project. Ev
 
 #### TSK-017: Implement Post-Generation Citation Grounding Audit
 - **Phase**: Phase 4
-- **Priority**: P0 | **Status**: `TODO`
+- **Priority**: P0 | **Status**: `DONE`
 - **Dependencies**: TSK-009, TSK-016
 - **Affected Files**: `src/trustworthy_rag/evidence/citation.py`
 - **Implementation Steps**:
