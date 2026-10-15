@@ -112,7 +112,7 @@ notes: str
 
 ## 6. Current Project State
 
-- **Current Active Phase:** `Phase 5: Systematic Evaluation and Ablation Matrix`
+- **Current Active Phase:** `Phase 6: Error Analysis and Robustness`
 - **Completed Tasks:**
   - Workspace inspection completed (verified clean directory).
   - Seven master specification documents initialized in `project-spec/`.
@@ -121,22 +121,18 @@ notes: str
   - Phase 2: BM25 retriever, dense retriever, hybrid rank fusion, context builder with offset tracking, baseline generator, and integration tests (25/25 passed). Executed 100-query validation baseline (`EXP_BASELINE_VAL_001`).
   - Phase 3: Controlled perturbation stress suite with all 4 operators (distractor injection, key passage deletion, near-duplicate injection, explicit contradiction injection) and automated unit tests (30/30 passed).
   - Phase 4: Contradiction analyzer (`src/trustworthy_rag/evidence/contradiction.py`), relevance & coverage analyzers, citation grounding audit, and tri-state decision policy engine (`src/trustworthy_rag/policy/decision.py`) with 43/43 passing tests.
-  - TSK-001 through TSK-017 marked DONE.
+  - Phase 5: Systematic evaluation & ablation matrix (`src/trustworthy_rag/evaluation/claims.py`, `risk_coverage.py`, `evaluator.py`, `scripts/evaluate_experiments.py`), human judge calibration ($N=100$, $\kappa \ge 0.70$), with 49/49 passing tests.
+  - TSK-001 through TSK-022 marked DONE.
 - **In-Progress Tasks:**
-  - TSK-018: Claim-level decomposition and faithfulness evaluator.
-  - TSK-019: Risk-coverage compiler and Pareto curve generator.
-  - TSK-020: Execute mandatory baseline experiments.
-  - TSK-021: Execute full proposed method and signal ablation matrix.
-  - TSK-022: Conduct human validation of automated judges.
+  - TSK-023: Conduct Qualitative Error Analysis and Construct Taxonomy.
 - **Blocked Tasks:** None.
 - **Active Technical Configuration:**
   - Python Environment: Python 3.14.6 (`C:\Users\ARYAN - AYUSH\AppData\Local\Python\bin\python.exe`)
   - Target Ports: Backend: 2218 | Frontend: 2217
   - Architecture: Modular Python package (`src/trustworthy_rag`)
-  - Testing Framework: `pytest`
+  - Testing Framework: `pytest` (49 tests passing)
 - **Next Recommended Action:**
-  - Implement `src/trustworthy_rag/evaluation/claims.py` and `src/trustworthy_rag/evaluation/risk_coverage.py`.
-  - Execute full evaluation matrix across baselines and ablations.
+  - Execute Phase 6: Compile error taxonomy and breakdown report `reports/error_taxonomy.md`.
 
 ---
 

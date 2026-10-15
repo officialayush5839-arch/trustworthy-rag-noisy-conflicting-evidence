@@ -35,13 +35,13 @@
     {
       "id": "phase_5",
       "title": "Phase 5: Systematic Evaluation and Ablation Matrix",
-      "status": "IN_PROGRESS",
-      "completed_at": null
+      "status": "COMPLETED",
+      "completed_at": "2026-10-15T08:38:00"
     },
     {
       "id": "phase_6",
       "title": "Phase 6: Error Analysis and Robustness",
-      "status": "PENDING",
+      "status": "IN_PROGRESS",
       "completed_at": null
     },
     {

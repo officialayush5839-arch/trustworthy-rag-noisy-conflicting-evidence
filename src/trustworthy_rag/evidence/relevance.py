@@ -26,7 +26,7 @@ class RelevanceAnalyzer:
             weighted_sum += weight * score
             weight_normalizer += weight
 
-        if weight_normalizer == 0.0:
-            return 0.0
-
-        return float(min(1.0, max(0.0, weighted_sum / weight_normalizer)))
+        top_1_score = max(0.0, min(1.0, candidates[0].fused_score))
+        decayed_avg = weighted_sum / weight_normalizer if weight_normalizer > 0 else 0.0
+        combined = (0.70 * top_1_score) + (0.30 * decayed_avg)
+        return float(min(1.0, max(0.0, combined)))

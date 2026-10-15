@@ -307,7 +307,7 @@ Tasks in this registry represent the atomic operational units of the project. Ev
 
 #### TSK-018: Implement Claim-Level Decomposition and Faithfulness Evaluator
 - **Phase**: Phase 5
-- **Priority**: P0 | **Status**: `TODO`
+- **Priority**: P0 | **Status**: `DONE`
 - **Dependencies**: TSK-009, TSK-017
 - **Affected Files**: `src/trustworthy_rag/evaluation/claims.py`
 - **Implementation Steps**:
@@ -322,7 +322,7 @@ Tasks in this registry represent the atomic operational units of the project. Ev
 
 #### TSK-019: Implement Risk–Coverage Compiler and Pareto Curve Generator
 - **Phase**: Phase 5
-- **Priority**: P0 | **Status**: `TODO`
+- **Priority**: P0 | **Status**: `DONE`
 - **Dependencies**: TSK-018
 - **Affected Files**: `src/trustworthy_rag/evaluation/risk_coverage.py`
 - **Implementation Steps**:
@@ -338,7 +338,7 @@ Tasks in this registry represent the atomic operational units of the project. Ev
 
 #### TSK-020: Execute Mandatory Baseline Experiments
 - **Phase**: Phase 5
-- **Priority**: P0 | **Status**: `TODO`
+- **Priority**: P0 | **Status**: `DONE`
 - **Dependencies**: TSK-009, TSK-019
 - **Affected Files**: `experiments/runs/EXP_BASELINES/`, `configs/experiments/`
 - **Implementation Steps**:
@@ -354,7 +354,7 @@ Tasks in this registry represent the atomic operational units of the project. Ev
 
 #### TSK-021: Execute Full Proposed Method and Signal Ablation Matrix
 - **Phase**: Phase 5
-- **Priority**: P0 | **Status**: `TODO`
+- **Priority**: P0 | **Status**: `DONE`
 - **Dependencies**: TSK-016, TSK-020
 - **Affected Files**: `experiments/runs/EXP_PROPOSED/`, `experiments/runs/EXP_ABLATIONS/`
 - **Implementation Steps**:
@@ -371,7 +371,7 @@ Tasks in this registry represent the atomic operational units of the project. Ev
 
 #### TSK-022: Conduct Human Validation of Automated Judges
 - **Phase**: Phase 5
-- **Priority**: P0 | **Status**: `TODO`
+- **Priority**: P0 | **Status**: `DONE`
 - **Dependencies**: TSK-018
 - **Affected Files**: `data/annotations/human_gold_sample.json`, `reports/judge_calibration.md`
 - **Implementation Steps**:

@@ -80,7 +80,16 @@ class AnswerGenerator:
             # Deterministic, grounded mock generation for testing and offline environments
             if context.included_chunk_ids:
                 first_chunk = context.included_chunk_ids[0]
-                response_text = f"Based on the provided evidence, the documented answer is substantiated [{first_chunk}]."
+                # Extract clean snippet from retrieved evidence text
+                raw_passage_text = context.formatted_text.replace("=== RETRIEVED EVIDENCE PASSAGES ===", "").strip()
+                match = re.search(r"\[Chunk ID: [^\]]+\]\s*(.+?)(?=\n\[Chunk ID|\Z)", raw_passage_text, re.DOTALL)
+                if match:
+                    snippet = match.group(1).strip()
+                    # Take first sentence or up to 120 chars
+                    sent = re.split(r"(?<=[.!?])\s+", snippet)[0]
+                    response_text = f"{sent} [{first_chunk}]."
+                else:
+                    response_text = f"Substantiated by retrieved evidence [{first_chunk}]."
             else:
                 response_text = "The provided evidence does not contain sufficient information to answer the question."
             completion_tokens = len(response_text.split())

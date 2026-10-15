@@ -24,21 +24,24 @@ class ContradictionAnalyzer:
         if "conflict_" in text_a or "conflict_" in text_b or "In contrast to previous claims" in text_a or "In contrast to previous claims" in text_b:
             return 0.92
 
-        # Extract 4-digit years
-        years_a = set(re.findall(r"\b(19\d{2}|20\d{2})\b", text_a))
-        years_b = set(re.findall(r"\b(19\d{2}|20\d{2})\b", text_b))
-
-        # If both mention different years in similar contexts
-        if years_a and years_b and not years_a.intersection(years_b):
-            common_words = set(text_a.lower().split()).intersection(set(text_b.lower().split()))
-            if len(common_words) >= 4:
-                return 0.88
-
-        # Polar antonym / negation pairs
+        # Polar antonym / negation pairs on the same entities
         if ("landed" in text_a and "failed to land" in text_b) or ("failed to land" in text_a and "landed" in text_b):
             return 0.95
         if ("succeeded" in text_a and "never succeeded" in text_b) or ("never succeeded" in text_a and "succeeded" in text_b):
             return 0.95
+
+        # Check explicit contradictory claims on the same topic/entity
+        stop_words = {"the", "a", "an", "is", "was", "were", "in", "on", "at", "to", "for", "of", "and", "by", "it"}
+        words_a = set(w for w in re.findall(r"\b\w{3,}\b", text_a.lower()) if w not in stop_words)
+        words_b = set(w for w in re.findall(r"\b\w{3,}\b", text_b.lower()) if w not in stop_words)
+        common_content_words = words_a.intersection(words_b)
+
+        years_a = set(re.findall(r"\b(19\d{2}|20\d{2})\b", text_a))
+        years_b = set(re.findall(r"\b(19\d{2}|20\d{2})\b", text_b))
+
+        # Only if passages strongly overlap in content (>5 substantive words) and have conflicting years for the same subject
+        if len(common_content_words) >= 6 and years_a and years_b and not years_a.intersection(years_b):
+            return 0.88
 
         return 0.05
 

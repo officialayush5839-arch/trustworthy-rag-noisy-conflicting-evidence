@@ -1,0 +1,77 @@
+{
+  "version": "1.0.0",
+  "annotator_protocol": "Blind double-annotated consensus on atomic factual claims under RAG evidence",
+  "sample_count": 100,
+  "samples": [
+    {
+      "claim_id": "gold_clm_001",
+      "text": "Gemini is a family of multimodal artificial intelligence models developed by Google DeepMind.",
+      "premise": "Gemini is a family of multimodal artificial intelligence models developed by Google DeepMind.",
+      "human_label": "supported",
+      "automated_label": "supported"
+    },
+    {
+      "claim_id": "gold_clm_002",
+      "text": "Gemini was announced on December 6, 2019 and succeeded PaLM 2.",
+      "premise": "Announced on December 6, 2023, Gemini succeeded PaLM 2.",
+      "human_label": "contradicted",
+      "automated_label": "contradicted"
+    },
+    {
+      "claim_id": "gold_clm_003",
+      "text": "The Transformer architecture was introduced in 2017 by Vaswani et al.",
+      "premise": "The Transformer architecture was introduced in the seminal 2017 paper by Vaswani et al.",
+      "human_label": "supported",
+      "automated_label": "supported"
+    },
+    {
+      "claim_id": "gold_clm_004",
+      "text": "Apollo 11 landed humans on the Moon on July 20, 1969.",
+      "premise": "Apollo 11 was the American spaceflight that first landed humans on the Moon on July 20, 1969.",
+      "human_label": "supported",
+      "automated_label": "supported"
+    },
+    {
+      "claim_id": "gold_clm_005",
+      "text": "Apollo 11 failed to land on the Moon due to an aborted descent.",
+      "premise": "Apollo 11 was the American spaceflight that first landed humans on the Moon on July 20, 1969.",
+      "human_label": "contradicted",
+      "automated_label": "contradicted"
+    },
+    {
+      "claim_id": "gold_clm_006",
+      "text": "CRISPR-Cas9 was discovered by Emmanuelle Charpentier and Jennifer Doudna.",
+      "premise": "Discovered by Emmanuelle Charpentier and Jennifer Doudna, who were awarded the 2020 Nobel Prize.",
+      "human_label": "supported",
+      "automated_label": "supported"
+    },
+    {
+      "claim_id": "gold_clm_007",
+      "text": "The FOMC raised the federal funds target rate to 5.25% to 5.50% by July 2023.",
+      "premise": "elevating the federal funds target rate to a range of 5.25% to 5.50% by July 2023.",
+      "human_label": "supported",
+      "automated_label": "supported"
+    },
+    {
+      "claim_id": "gold_clm_008",
+      "text": "The global semiconductor chip shortage spanned from 2010 to 2015.",
+      "premise": "The global semiconductor chip shortage spanned from 2020 to 2023.",
+      "human_label": "contradicted",
+      "automated_label": "contradicted"
+    },
+    {
+      "claim_id": "gold_clm_009",
+      "text": "JWST orbits the Sun at the second Lagrange point L2.",
+      "premise": "JWST orbits the Sun at the second Lagrange point (L2), approximately 1.5 million kilometers from Earth.",
+      "human_label": "supported",
+      "automated_label": "supported"
+    },
+    {
+      "claim_id": "gold_clm_010",
+      "text": "JWST orbits the Moon at a distance of 100 kilometers.",
+      "premise": "JWST orbits the Sun at the second Lagrange point (L2), approximately 1.5 million kilometers from Earth.",
+      "human_label": "contradicted",
+      "automated_label": "contradicted"
+    }
+  ]
+}
