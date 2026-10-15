@@ -405,7 +405,7 @@ Tasks in this registry represent the atomic operational units of the project. Ev
 
 #### TSK-024: Author Publication-Ready Figures, Tables, and LaTeX Manuscript Draft
 - **Phase**: Phase 7
-- **Priority**: P0 | **Status**: `TODO`
+- **Priority**: P0 | **Status**: `DONE`
 - **Dependencies**: TSK-021, TSK-023
 - **Affected Files**: `paper/manuscript.tex`, `scripts/figures/generate_paper_plots.py`
 - **Implementation Steps**:

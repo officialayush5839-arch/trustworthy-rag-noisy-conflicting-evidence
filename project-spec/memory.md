@@ -112,7 +112,7 @@ notes: str
 
 ## 6. Current Project State
 
-- **Current Active Phase:** `Phase 7: Research Reporting and Manuscript Preparation`
+- **Current Active Phase:** `Phase 8: Final Validation and Release Packaging`
 - **Completed Tasks:**
   - Workspace inspection completed (verified clean directory).
   - Seven master specification documents initialized in `project-spec/`.
@@ -123,9 +123,10 @@ notes: str
   - Phase 4: Contradiction analyzer (`src/trustworthy_rag/evidence/contradiction.py`), relevance & coverage analyzers, citation grounding audit, and tri-state decision policy engine (`src/trustworthy_rag/policy/decision.py`) with 43/43 passing tests.
   - Phase 5: Systematic evaluation & ablation matrix (`src/trustworthy_rag/evaluation/claims.py`, `risk_coverage.py`, `evaluator.py`, `scripts/evaluate_experiments.py`), human judge calibration ($N=100$, $\kappa \ge 0.70$), with 49/49 passing tests.
   - Phase 6: Qualitative error taxonomy and failure catalog (`reports/error_taxonomy.md`), documenting 4 error classes (ERR-FP, ERR-FA, ERR-CD, ERR-DR) and boundary cases.
-  - TSK-001 through TSK-023 marked DONE.
+  - Phase 7: Research reporting and manuscript (`paper/manuscript.tex`), publication-ready vector plots (`scripts/figures/generate_paper_plots.py`), and 100% claim-to-artifact audit (`reports/paper_claims_audit.md`).
+  - TSK-001 through TSK-024 marked DONE.
 - **In-Progress Tasks:**
-  - TSK-024: Author Publication-Ready Figures, Tables, and LaTeX Manuscript Draft.
+  - TSK-025: Author Standalone Replication Runner and Release Documentation.
 - **Blocked Tasks:** None.
 - **Active Technical Configuration:**
   - Python Environment: Python 3.14.6 (`C:\Users\ARYAN - AYUSH\AppData\Local\Python\bin\python.exe`)
@@ -133,7 +134,7 @@ notes: str
   - Architecture: Modular Python package (`src/trustworthy_rag`)
   - Testing Framework: `pytest` (49 tests passing)
 - **Next Recommended Action:**
-  - Implement figure generation script `scripts/figures/generate_paper_plots.py` and author LaTeX manuscript `paper/manuscript.tex`.
+  - Implement standalone replication runner `run_reproduction.py` and author comprehensive release docs.
 
 ---
 
